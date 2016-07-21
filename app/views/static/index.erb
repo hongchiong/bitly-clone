@@ -1,0 +1,29 @@
+<div class="everything">
+ <h1>CAT.LY</h1>
+ <div>
+  
+  <p id='error'></p>
+
+
+  <form action = "/urls" method = "post">
+    <input type ="text" name="long_url">
+    <br>
+    <br>
+    <input type="submit" value="Send to Space">
+  </form>
+</div>
+<div>
+  <table class="center">
+    <tr>
+      <th id='first'>Urls</th>
+      <th id='last'>Visits</th>
+    </tr>
+    <% @urls.each do |link| %>
+      <tr>
+        <td><a href="<%= link.short_url %>"><%= link.short_url %></a></td>
+        <td><%= link.count %></td>
+      </tr>
+    <% end %>
+  </table> 
+  </div>
+</div>
